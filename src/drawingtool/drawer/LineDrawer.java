@@ -2,7 +2,6 @@ package drawingtool.drawer;
 
 import drawingtool.Canvas;
 import drawingtool.Line;
-import drawingtool.exception.CouldNotDrawException;
 
 public class LineDrawer implements IDrawer {
 

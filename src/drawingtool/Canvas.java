@@ -62,13 +62,21 @@ public class Canvas {
         }
     }
 
-    public void fillLine(Line line) { // TODO is vertical or horizontal
+    public void fillLine(Line line) {
         line.validate(this);
-        int rowIdx = line.getY1() - 1;
-        String[] canvasLine = canvas[rowIdx];
-        for(int i = 0; i< canvasLine.length; i++) {
-            if(i+1 >= line.getX1() && i+1 <= line.getX2() ){
-                canvas[rowIdx][i] = "x";
+
+        if(line.isHorizontal()) {
+            int rowIdx = line.getY1() - 1;
+            String[] canvasLine = canvas[rowIdx];
+            for (int i = 0; i < canvasLine.length; i++) {
+                if (i + 1 >= line.getX1() && i + 1 <= line.getX2()) {
+                    canvas[rowIdx][i] = "x";
+                }
+            }
+        } else if (line.isVertical()) {
+            int colIdx = line.getX1() -1;
+            for(int i = line.getY1() -1; i < line.getY2(); i++) {
+                canvas[i][colIdx] = "x";
             }
         }
     }

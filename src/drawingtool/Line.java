@@ -32,11 +32,11 @@ public class Line {
             throw new CouldNotDrawException("Y1 coordinate is not valid.");
     }
 
-    public boolean isVertical() {
+    public boolean isHorizontal() {
         return y1 == y2;
     }
 
-    public boolean isHorizontal(){
+    public boolean isVertical(){
         return x1 == x2;
     }
 
