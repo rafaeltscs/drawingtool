@@ -11,7 +11,7 @@ public class RectangleShapeDrawer implements IShapeDrawer {
 
     @Override
     public Canvas draw(Canvas canvas, String input, String output) {
-        System.out.println("Rectangle: " + input);
+        System.out.println("Drawing Rectangle: " + input);
         String[] coordinates = input.split(" ");
 
         int x1 = Integer.parseInt(coordinates[0]);

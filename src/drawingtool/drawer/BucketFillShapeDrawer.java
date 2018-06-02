@@ -11,7 +11,7 @@ public class BucketFillShapeDrawer implements IShapeDrawer {
 
     @Override
     public Canvas draw(Canvas canvas, String input, String output) throws NoCanvasException {
-        System.out.println("Bucket Fill: " + input);
+        System.out.println("Drawing Bucket Fill: " + input);
         String[] values = input.split(" ");
         int x = Integer.parseInt(values[0]);
         int y = Integer.parseInt(values[1]);
