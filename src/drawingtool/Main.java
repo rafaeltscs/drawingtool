@@ -5,14 +5,15 @@ import drawingtool.exception.CouldNotDrawException;
 import drawingtool.exception.NoCanvasException;
 import drawingtool.exception.NoInputException;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
- * This application reads instructions from INPUT and draws them int OUTPUT.
+ * This application reads instructions from INPUT and draws them into OUTPUT.
  */
 public class Main {
 
-    private static final String DEFAULT_OUTPUT = "output.txt";
+    private static final String DEFAULT_OUTPUT = System.getProperty("user.dir") + File.separator + "output.txt";
 
     public static void main(String[] args) {
 
