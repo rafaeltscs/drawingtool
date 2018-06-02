@@ -10,7 +10,7 @@ public class LineShapeDrawer implements IShapeDrawer {
 
     @Override
     public Canvas draw(Canvas canvas, String input, String output) {
-        System.out.println("Line: " + input);
+        System.out.println("Drawing Line: " + input);
         String[] coordinates = input.split(" ");
 
         int x1 = Integer.parseInt(coordinates[0]);
