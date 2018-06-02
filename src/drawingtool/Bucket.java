@@ -1,8 +1,10 @@
-package drawingtool.drawer;
+package drawingtool;
 
-import drawingtool.Canvas;
 import drawingtool.exception.CoordinatesOutOfBoundsException;
 
+/**
+ * Represents a bucket to be used for filling an area connected to a coordinate with a specified 'color'.
+ */
 public class Bucket {
     private int x,y;
     private String color;
@@ -30,10 +32,23 @@ public class Bucket {
             throw new CoordinatesOutOfBoundsException( String.format("(%2d, %2d) is invalid for filling.", x, y));
     }
 
+    /**
+     * Fills the provided array[][] with the bucket's color and returns it.
+     * @param canvas
+     * @return
+     */
     public String[][] fill(String[][] canvas) {
         return floodFill(canvas, x-1, y-1, canvas[y][x]);
     }
 
+    /**
+     * Fills the provided array[][] with the bucket's color, using the FloodFill Algorithm and returns it to the caller.
+     * @param canvas
+     * @param xNode
+     * @param yNode
+     * @param targetColor
+     * @return
+     */
     private String[][] floodFill(String[][] canvas, int xNode, int yNode, String targetColor) {
 
         if(xNode < 0 || yNode < 0 || xNode >= canvas[0].length || yNode >= canvas.length)

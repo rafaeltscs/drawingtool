@@ -4,6 +4,9 @@ import drawingtool.Canvas;
 import drawingtool.Line;
 import drawingtool.Rectangle;
 
+/**
+ * This class is responsible for controlling the RectangleShape Drawing
+ */
 public class RectangleShapeDrawer implements IShapeDrawer {
 
     @Override

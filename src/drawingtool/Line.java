@@ -2,6 +2,9 @@ package drawingtool;
 
 import drawingtool.exception.CouldNotDrawException;
 
+/**
+ * This class represents a line to be drawn into a Canvas.
+ */
 public class Line {
 
     private int x1,y1,x2,y2;

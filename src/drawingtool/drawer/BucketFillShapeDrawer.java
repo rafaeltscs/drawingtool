@@ -1,8 +1,12 @@
 package drawingtool.drawer;
 
+import drawingtool.Bucket;
 import drawingtool.Canvas;
 import drawingtool.exception.NoCanvasException;
 
+/**
+ * This class is responsible for controlling the BucketFillShape Drawing
+ */
 public class BucketFillShapeDrawer implements IShapeDrawer {
 
     @Override

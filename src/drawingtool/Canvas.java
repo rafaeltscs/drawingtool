@@ -1,12 +1,14 @@
 package drawingtool;
 
-import drawingtool.drawer.Bucket;
 import drawingtool.exception.CouldNotDrawException;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * This class represents the canvas where the shapes must be drawn.
+ */
 public class Canvas {
 
     private int width;

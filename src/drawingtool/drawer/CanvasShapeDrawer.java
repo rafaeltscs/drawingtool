@@ -2,6 +2,9 @@ package drawingtool.drawer;
 
 import drawingtool.Canvas;
 
+/**
+ * This class is responsible for controlling the CanvasShape Drawing
+ */
 public class CanvasShapeDrawer implements IShapeDrawer {
 
     @Override

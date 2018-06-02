@@ -3,6 +3,9 @@ package drawingtool.drawer;
 import drawingtool.Canvas;
 import drawingtool.Line;
 
+/**
+ * This class is responsible for controlling the LineShape Drawing
+ */
 public class LineShapeDrawer implements IShapeDrawer {
 
     @Override

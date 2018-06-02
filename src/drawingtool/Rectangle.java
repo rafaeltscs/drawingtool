@@ -1,5 +1,8 @@
 package drawingtool;
 
+/**
+ * This class represents a rectangle to be drawn into a Canvas.
+ */
 public class Rectangle {
 
     private Line top, right, bottom, left;
