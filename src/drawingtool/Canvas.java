@@ -3,10 +3,8 @@ package drawingtool;
 import drawingtool.exception.CouldNotDrawException;
 
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Arrays;
 
 public class Canvas {
 
@@ -21,9 +19,13 @@ public class Canvas {
         this.height = height;
         this.canvas = new String[this.height][this.width];
 
-        String[] rowSample = new String[width];
-        Arrays.fill(rowSample," ");
-        Arrays.fill(this.canvas, rowSample);
+        for (int x = 0; x < this.height; x++)
+        {
+            for (int y = 0; y < this.width; y++)
+            {
+                this.canvas[x][y] =  " ";
+            }
+        }
     }
 
     public String[][] getCanvas() {
@@ -34,23 +36,23 @@ public class Canvas {
         this.canvas = canvas;
     }
 
-    public void draw(String output) {
+    public void draw(String output, boolean append) {
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(output));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(output, append));
 
-            writer.write("----------------------");
+            writer.append("----------------------");
 
             writer.newLine();
             for (String[] row : this.canvas) {
-                writer.write("|");
+                writer.append("|");
                 for (String value : row) {
-                    writer.write(value);
+                    writer.append(value);
                 }
-                writer.write("|");
+                writer.append("|");
                 writer.newLine();
             }
 
-            writer.write("----------------------");
+            writer.append("----------------------");
 
             writer.newLine();
             writer.close();
@@ -58,5 +60,24 @@ public class Canvas {
             e.printStackTrace();
             throw new CouldNotDrawException("Output could not be drawn to " + output);
         }
+    }
+
+    public void fillLine(Line line) { // TODO is vertical or horizontal
+        line.validate(this);
+        int rowIdx = line.getY1() - 1;
+        String[] canvasLine = canvas[rowIdx];
+        for(int i = 0; i< canvasLine.length; i++) {
+            if(i+1 >= line.getX1() && i+1 <= line.getX2() ){
+                canvas[rowIdx][i] = "x";
+            }
+        }
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
     }
 }

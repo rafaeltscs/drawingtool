@@ -9,5 +9,5 @@ import java.io.IOException;
  * This interface should be implemented by any Drawer class.
  */
 public interface IDrawer {
-    Canvas draw(Canvas canvas, String input) throws IOException, NoCanvasException;
+    Canvas draw(Canvas canvas, String input, String output) throws IOException, NoCanvasException;
 }
