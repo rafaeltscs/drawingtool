@@ -3,6 +3,7 @@ package drawingtool.drawer;
 import drawingtool.Canvas;
 import drawingtool.exception.CouldNotDrawException;
 import drawingtool.exception.NoCanvasException;
+import drawingtool.exception.UnknownShapeException;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -35,14 +36,25 @@ public class Drawer {
             }
 
             streamSupplier.get().forEach( line -> {
-                switch (line.charAt(0)) {
+                char shape = line.charAt(0);
+                switch (shape) {
                     case 'C':
-                        canvas = new CanvasDrawer().draw(canvas,line.substring(1).trim());
+                        canvas = new CanvasShapeDrawer().draw(canvas,line.substring(1).trim(), output);
                         break;
+                    case 'L':
+                        canvas = new LineShapeDrawer().draw(canvas,line.substring(1).trim(), output);
+                        break;
+                    case 'R':
+                        canvas = new RectangleShapeDrawer().draw(canvas,line.substring(1).trim(), output);
+                        break;
+                    case 'B':
+                        canvas = new BucketFillShapeDrawer().draw(canvas,line.substring(1).trim(), output);
+                        break;
+                    default:
+                        throw new UnknownShapeException(String.format("Shape %s is not valid.", shape));
                 }
             });
 
-            this.canvas.draw(output);
         });
     }
 
