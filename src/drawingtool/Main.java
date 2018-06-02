@@ -4,6 +4,7 @@ import drawingtool.drawer.Drawer;
 import drawingtool.exception.CouldNotDrawException;
 import drawingtool.exception.NoCanvasException;
 import drawingtool.exception.NoInputException;
+import drawingtool.exception.UnknownShapeException;
 
 import java.io.File;
 import java.io.IOException;
@@ -29,7 +30,7 @@ public class Main {
             drawer.draw(args[0], output);
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (NoInputException | NoCanvasException | CouldNotDrawException e) {
+        } catch (NoInputException | NoCanvasException | CouldNotDrawException | UnknownShapeException e) {
            System.out.println(e.getMessage());
         }
 
