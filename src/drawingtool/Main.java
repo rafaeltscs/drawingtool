@@ -3,7 +3,6 @@ package drawingtool;
 import drawingtool.drawer.Drawer;
 import drawingtool.exception.CouldNotDrawException;
 import drawingtool.exception.NoCanvasException;
-import drawingtool.exception.NoInputException;
 import drawingtool.exception.UnknownShapeException;
 
 import java.io.File;
