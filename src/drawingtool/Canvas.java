@@ -1,5 +1,6 @@
 package drawingtool;
 
+import drawingtool.drawer.Bucket;
 import drawingtool.exception.CouldNotDrawException;
 
 import java.io.BufferedWriter;
@@ -26,14 +27,6 @@ public class Canvas {
                 this.canvas[x][y] =  " ";
             }
         }
-    }
-
-    public String[][] getCanvas() {
-        return canvas;
-    }
-
-    public void setCanvas(String[][] canvas) {
-        this.canvas = canvas;
     }
 
     public void draw(String output, boolean append) {
@@ -90,11 +83,24 @@ public class Canvas {
         fillLine(rectangle.getLeft());
     }
 
+    public void bucketFill(Bucket bucket) {
+        bucket.validate(this);
+        setCanvas(bucket.fill(this.getCanvas()));
+    }
+
     public int getWidth() {
         return width;
     }
 
     public int getHeight() {
         return height;
+    }
+
+    public String[][] getCanvas() {
+        return this.canvas;
+    }
+
+    public void setCanvas(String[][] canvas) {
+        this.canvas = canvas;
     }
 }

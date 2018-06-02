@@ -45,6 +45,9 @@ public class Drawer {
                     case 'R':
                         canvas = new RectangleShapeDrawer().draw(canvas,line.substring(1).trim(), output);
                         break;
+                    case 'B':
+                        canvas = new BucketFillShapeDrawer().draw(canvas,line.substring(1).trim(), output);
+                        break;
                 }
             });
 

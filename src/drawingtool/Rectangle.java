@@ -1,7 +1,5 @@
 package drawingtool;
 
-import drawingtool.exception.CouldNotDrawException;
-
 public class Rectangle {
 
     private Line top, right, bottom, left;
