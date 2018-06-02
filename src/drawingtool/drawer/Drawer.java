@@ -37,10 +37,13 @@ public class Drawer {
             streamSupplier.get().forEach( line -> {
                 switch (line.charAt(0)) {
                     case 'C':
-                        canvas = new CanvasDrawer().draw(canvas,line.substring(1).trim(), output);
+                        canvas = new CanvasShapeDrawer().draw(canvas,line.substring(1).trim(), output);
                         break;
                     case 'L':
-                        canvas = new LineDrawer().draw(canvas,line.substring(1).trim(), output);
+                        canvas = new LineShapeDrawer().draw(canvas,line.substring(1).trim(), output);
+                        break;
+                    case 'R':
+                        canvas = new RectangleShapeDrawer().draw(canvas,line.substring(1).trim(), output);
                         break;
                 }
             });

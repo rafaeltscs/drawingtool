@@ -81,6 +81,15 @@ public class Canvas {
         }
     }
 
+    public void fillRectangle(Rectangle rectangle) {
+        rectangle.validate(this);
+
+        fillLine(rectangle.getTop());
+        fillLine(rectangle.getRight());
+        fillLine(rectangle.getBottom());
+        fillLine(rectangle.getLeft());
+    }
+
     public int getWidth() {
         return width;
     }

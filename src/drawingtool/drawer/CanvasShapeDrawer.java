@@ -2,7 +2,7 @@ package drawingtool.drawer;
 
 import drawingtool.Canvas;
 
-public class CanvasDrawer implements IDrawer {
+public class CanvasShapeDrawer implements IShapeDrawer {
 
     @Override
     public Canvas draw(Canvas canvas, String input, String output) {
